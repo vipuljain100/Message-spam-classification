@@ -52,6 +52,7 @@ if st.button('Predict'):
     new_text = remove_numbers(new_text)
     new_text = remove_emails(new_text)
     new_text = transform_text(new_text)
+
     tfidf_text = tfidf.transform([new_text]).toarray()
     result=model.predict(tfidf_text)[0]
     if result==1:
